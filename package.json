@@ -1,26 +1,48 @@
 {
-  "name": "react-native-test-thingy",
-  "version": "0.1.0",
-  "private": true,
-  "devDependencies": {
-    "react-native-scripts": "1.8.1",
-    "jest-expo": "23.0.0",
-    "react-test-renderer": "16.0.0"
-  },
-  "main": "./node_modules/react-native-scripts/build/bin/crna-entry.js",
-  "scripts": {
-    "start": "react-native-scripts start",
-    "eject": "react-native-scripts eject",
-    "android": "react-native-scripts android",
-    "ios": "react-native-scripts ios",
-    "test": "node node_modules/jest/bin/jest.js --watch"
-  },
-  "jest": {
-    "preset": "jest-expo"
-  },
-  "dependencies": {
-    "expo": "^23.0.4",
-    "react": "16.0.0",
-    "react-native": "0.50.3"
-  }
+    "name": "react-native-test-thingy",
+    "version": "0.1.0",
+    "private": true,
+    "devDependencies": {
+        "@types/jest": "^22.0.1",
+        "@types/react": "^16.0.34",
+        "@types/react-native": "^0.51.10",
+        "@types/react-test-renderer": "^16.0.0",
+        "jest-expo": "23.0.0",
+        "react-native-scripts": "1.8.1",
+        "react-test-renderer": "16.0.0",
+        "ts-jest": "^22.0.1",
+        "typescript": "^2.6.2"
+    },
+    "main": "./node_modules/react-native-scripts/build/bin/crna-entry.js",
+    "scripts": {
+        "start": "react-native-scripts start",
+        "eject": "react-native-scripts eject",
+        "android": "react-native-scripts android",
+        "ios": "react-native-scripts ios",
+        "test": "node node_modules/jest/bin/jest.js --watch"
+    },
+    "jest": {
+        "preset": "jest-expo",
+        "moduleFileExtensions": [
+            "ts",
+            "tsx",
+            "js"
+        ],
+        "transform": {
+            "^.+\\.(js)$": "<rootDir>/node_modules/babel-jest",
+            "\\.(ts|tsx)$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+        },
+        "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
+        "testPathIgnorePatterns": [
+            "\\.snap$",
+            "<rootDir>/node_modules/",
+            "<rootDir>/lib/"
+        ],
+        "cacheDirectory": ".jest/cache"
+    },
+    "dependencies": {
+        "expo": "^23.0.4",
+        "react": "16.0.0",
+        "react-native": "0.50.3"
+    }
 }
