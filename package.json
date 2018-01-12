@@ -3,19 +3,26 @@
     "version": "0.1.0",
     "private": true,
     "devDependencies": {
+        "@types/enzyme": "^3.1.6",
         "@types/jest": "^22.0.1",
         "@types/react": "^16.0.34",
         "@types/react-native": "^0.51.10",
         "@types/react-test-renderer": "^16.0.0",
+        "concurrently": "^3.5.1",
+        "enzyme": "^3.3.0",
+        "enzyme-adapter-react-16": "^1.1.1",
         "jest-expo": "23.0.0",
+        "react-dom": "^16.2.0",
+        "react-native-mock": "^0.3.1",
         "react-native-scripts": "1.8.1",
+        "react-native-web": "^0.3.0",
         "react-test-renderer": "16.0.0",
         "ts-jest": "^22.0.1",
         "typescript": "^2.6.2"
     },
     "main": "./node_modules/react-native-scripts/build/bin/crna-entry.js",
     "scripts": {
-        "start": "react-native-scripts start",
+        "start": "concurrently \"tsc -w\" \"react-native-scripts start\"",
         "eject": "react-native-scripts eject",
         "android": "react-native-scripts android",
         "ios": "react-native-scripts ios",
@@ -23,6 +30,7 @@
     },
     "jest": {
         "preset": "jest-expo",
+        "setupTestFrameworkScriptFile": "./test_setup.js",
         "moduleFileExtensions": [
             "ts",
             "tsx",
